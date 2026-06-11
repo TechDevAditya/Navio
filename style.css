@@ -1,10 +1,4 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-body {
+body{
     background-color: #1a1a1a;
     color: white;
     font-family: sans-serif;
@@ -15,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-h1 {
+h1{
     margin: 20px 0 20px 0;
 }
 
@@ -63,4 +57,8 @@ h1 {
 
 .node-visited {
     background-color: cyan;
+}
+
+.node-shortest-path {
+    background-color: yellow;
 }
