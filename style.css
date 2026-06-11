@@ -36,3 +36,11 @@ h1 {
 .wall {
     background-color: #222;
 }
+
+.start {
+    background-color: #4ade80;
+}
+
+.end {
+    background-color: #f87171;
+}
