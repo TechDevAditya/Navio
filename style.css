@@ -60,3 +60,7 @@ h1 {
 #start-btn:hover {
     background-color: #22c55e;
 }
+
+.node-visited {
+    background-color: cyan;
+}

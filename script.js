@@ -46,8 +46,8 @@ for (let r=0;r<20;r++) {
 
 
 
-
 //start the algo and return data in the log
+//NEW: added animation to the grid once the start button is clicked.
 const startDijkstra=document.getElementById('start-btn');
 
 startDijkstra.addEventListener('click', function(){
@@ -55,15 +55,15 @@ startDijkstra.addEventListener('click', function(){
     const startNode=grid[9][10];
     const endNode=grid[9][39];
     
+    //run dijkstra and store the ordered array of visited nodes.
     const visitedNodes= dijkstra(grid,startNode,endNode);
+
+    //trigger the visual animation
+    animateDijkstra(visitedNodes);
 
     console.log("Algo finished! Nodes visited: ",visitedNodes.length);
     console.log(visitedNodes);
 });
-
-
-
-
 
 
 
@@ -139,3 +139,20 @@ function dijkstra(grid,startNode,endNode){
     return visitedNodes;
 }
 
+
+
+
+//Animation engine
+//FEATURE: creating a delay using setTimeout to queue up the animations to fire one after the other
+
+function animateDijkstra(visitedNodes){
+    for(let i=0;i<visitedNodes.length;i++){
+        setTimeout(()=>{
+            const node=visitedNodes[i];
+
+            if(!node.isEnd && !node.isStart){
+                node.element.classList.add('node-visited'); //added the classList node-visited so it turns cyan as dictated in css
+            }
+        }, 10*i) //10 ms* the index gives a sequential 10ms delay for each node in the pr queue.
+    }
+}
